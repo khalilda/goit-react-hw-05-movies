@@ -1,5 +1,5 @@
 import 'react-toastify/dist/ReactToastify.css';
-import { Footer, layourt } from './components';
+import { Footer, Layout } from './components';
 import { ToastContainer } from 'react-toastify';
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
