@@ -27,3 +27,8 @@ export const App = () => {
     </>
   );
 };
+
+//q whats wrong with the whole code?
+//q why is it not working?
+//q what is the problem?
+//q what is the solution?
