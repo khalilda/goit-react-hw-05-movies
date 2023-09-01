@@ -8,13 +8,13 @@ import { MainSlyels } from './Movies.styled';
 
 const Movies = () => {
     const [query, setQuery] = useState('');
-    const [movies, setMoviesData] = useState([]);
+    const [moviesData, setMoviesData] = useState([]);
     const location = useLocation();
     const fromQueryString = location.search.replace(/\?query=/, '');
 
     const getQuery = searchName => {
-        searchName === '
-        ' ? toast.error('Please enter the name of the movie')
+        searchName === ''
+         ? toast.error('Please enter the name of the movie')
         : setQuery(searchName);
 
 useEffect(() => {
