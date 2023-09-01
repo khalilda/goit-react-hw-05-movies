@@ -2,8 +2,8 @@ import { Loader } from 'components';
 import { Suspense, useEffect, useState } from 'react';
 import { BsArrowLeft } from 'react-icons/bs';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
-import noPhoto from 'images/noPhoto.jpg';
-import { getMovieById } from 'services/movies-api';
+import noPhoto from 'img/noImage.png';
+import { getMovieById } from '../../Services/Api';
 import {
   BtnGoBack,
   Img,

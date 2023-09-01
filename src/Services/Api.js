@@ -34,3 +34,13 @@ export const getReviews = movieId => {
   const respone = api.get(`/movie/${movieId}/reviews`);
   return respone;
 };
+
+export const getCast = movieId => {
+  const respone = api.get(`/movie/${movieId}/credits`);
+  return respone;
+};
+
+export const getMovieById = movieId => {
+  const respone = api.get(`/movie/${movieId}`);
+  return respone;
+};

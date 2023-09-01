@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import noImage from '../../images/noImage.jpg';
+import noImage from '../../img/noImage.png';
 import { getCast } from '../../Services/Api';
 import {
   CastBox,

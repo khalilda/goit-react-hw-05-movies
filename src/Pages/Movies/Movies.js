@@ -2,8 +2,8 @@ import { Loader, MoviesList, SearchMovies } from 'components';
 import { useEffect, useState, Suspense } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { getMoviesByName } from 'services/movies-api';
-import { MainStyels } from './Movies.styled';
+import { getMoviesByName } from '../../Services/Api';
+import { MainStyels } from '../Movies/Movies.styled';
 // import MoviesList from './MoviesList';
 
 const Movies = () => {

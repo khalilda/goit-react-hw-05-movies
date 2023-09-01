@@ -1,6 +1,6 @@
 import { TrendMoviesList } from 'Components';
 
-import { MainStyles } from './Home.styled';
+import { MainStyles } from '../Home/Home.styled';
 
 const Home = () => {
   return (

@@ -1,7 +1,7 @@
 import { ReadMore } from 'components';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getReviews } from 'services/movies-api';
+import { getReviews } from '../../Services/Api';
 import { FaUserCircle } from 'react-icons/fa';
 import { ErrorText, ReviewWrapp, UserName } from './Reviews.styled';
 
