@@ -1,9 +1,9 @@
-import { MoviesL } from '../MoviesL/MoviesL';
+import { MoviesList } from '../MoviesList/MoviesList';
 import { useState, useEffect } from 'react';
 
 import { getTrendMovies } from '../../Services/Api';
 
-const TrendMoviesL = () => {
+const TrendMoviesList = () => {
   const [moviesData, setmoviesData] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const TrendMoviesL = () => {
     fetchData();
   }, []);
 
-  return <MoviesL moviesData={moviesData} />;
+  return <MoviesList moviesData={moviesData} />;
 };
 
-export default TrendMoviesL;
+export default TrendMoviesList;

@@ -1,61 +1,64 @@
-import { Loader, MoviesL, SearchMovies } from 'components';
+import { Loader, MoviesList, SearchMovies } from 'components';
 import { useEffect, useState, Suspense } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { getMoviesByName } from 'services/movies-api';
-import { MainSlyels } from './Movies.styled';
-
+import { MainStyels } from './Movies.styled';
+import MoviesList from 'components/MovieList/MovieList';
 
 const Movies = () => {
-    const [query, setQuery] = useState('');
-    const [moviesData, setMoviesData] = useState([]);
-    const location = useLocation();
-    const fromQueryString = location.search.replace(/\?query=/, '');
+  const [query, setQuery] = useState('');
+  const [moviesData, setMoviesData] = useState([]);
+  const location = useLocation();
+  const fromQueryString = location.search.replace(/\?query=/, '');
 
-    const getQuery = searchName => {
-        searchName === ''
-         ? toast.error('Please enter the name of the movie')
-        : setQuery(searchName);
+  const getQuery = searchName => {
+    searchName === ''
+      ? toast.error('Please enter the name of the movie')
+      : setQuery(searchName);
+  };
 
-useEffect(() => {
-        if(!query) {
-            return;
+  useEffect(() => {
+    if (!query) {
+      return;
     }
     async function fetchData() {
+      try {
         const response = await getMoviesByName(query);
         const data = response.data.results;
 
         data.length === 0
-            ? toast.error('Sorry we cant find any ${query')
-            : setMoviesData(data);
-    } catch (error) {
+          ? toast.error(`Sorry, we can't find any ${query}`)
+          : setMoviesData(data);
+      } catch (error) {
         console.log(error);
+      }
     }
     fetchData();
-}, [query]);
+  }, [query]);
 
-useEffect(() => {
+  useEffect(() => {
     async function fetchData() {
-        try {
-            const response = await getMoviesByName(fromQueryString);
-            const data = response.data.results;
-            setMoviesData(data);
-        } catch (error) {
-            console.log(error);
-        }
+      try {
+        const response = await getMoviesByName(fromQueryString);
+        const data = response.data.results;
+        setMoviesData(data);
+      } catch (error) {
+        console.log(error);
+      }
     }
     fetchData();
-}, []);
+  }, [fromQueryString]);
 
-return (
-    <MainSlyels>
-        <SearchMovies onSubmit={getQuery} />
-        {moviesData && <MoviesL moviesData={moviesData} />}
-        <Suspense fallback={<Loader />}>
-            <Outlet />
-        </Suspense>
-    </MainSlyels>
-);  
+  return (
+    <MainStyels>
+      <SearchMovies onSubmit={getQuery} />
+      {moviesData && <MoviesList moviesData={moviesData} />}
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
+    </MainStyels>
+  );
 };
 
 export default Movies;

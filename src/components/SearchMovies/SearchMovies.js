@@ -1,12 +1,12 @@
 import PT from 'prop-types';
 import { useState } from 'react';
-import { useSearchPharms } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { BiSearchAlt2 } from 'react-icons/bi';
 import { Form, Input, SearchhBtn } from './SearchMovies.styled';
 
 const SearchMovies = ({ onSubmit }) => {
   const [inputValue, setInputValue] = useState('');
-  const [searchPharms, setSearchPharms] = useSearchPharms('');
+  const history = useHistory();
 
   const onInputChange = e => {
     const name = e.target.value;
@@ -18,26 +18,22 @@ const SearchMovies = ({ onSubmit }) => {
     const searchName = inputValue.trim();
     setInputValue('');
     onSubmit(searchName);
-    setSearchPharms({ query: searchName });
+    history.push(`?query=${searchName}`);
   };
 
   return (
-    <div>
-      <Form onSubmit={onFormSubmit}>
-        <Input
-          type="text"
-          placeholder="Search movies"
-          value={inputValue}
-          onChange={onInputChange}
-          required
-        />
-        <SearchhBtn type="submit" aria-label="Search">
-          <BiSearchAlt2
-            style={{ fill: '#fff', width: '20px', height: '20px' }}
-          />
-        </SearchhBtn>
-      </Form>
-    </div>
+    <Form onSubmit={onFormSubmit}>
+      <Input
+        type="text"
+        placeholder="Search movies"
+        value={inputValue}
+        onChange={onInputChange}
+        required
+      />
+      <SearchhBtn type="submit" aria-label="Search">
+        <BiSearchAlt2 style={{ fill: '#fff', width: '20px', height: '20px' }} />
+      </SearchhBtn>
+    </Form>
   );
 };
 

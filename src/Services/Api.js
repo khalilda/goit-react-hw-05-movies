@@ -20,12 +20,12 @@ export const getMoviesByName = query => {
   return respone;
 };
 
-export const getMovieD = movieId => {
+export const getMovieDetails = movieId => {
   const respone = api.get(`/movie/${movieId}`);
   return respone;
 };
 
-export const getMovieC = movieId => {
+export const getMovieCard = movieId => {
   const respone = api.get(`/movie/${movieId}/credits`);
   return respone;
 };
