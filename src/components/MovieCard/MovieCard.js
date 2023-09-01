@@ -8,7 +8,7 @@ import {
     MovieItems,
     RatingWrapp,
     Title,
-} from './MovieC.styled';
+} from './MovieCard.styled';
 
 
 const MovieC = ({ movie }) => {

@@ -1,11 +1,11 @@
-import { Header, NavLinkStyled } from './Bar.styled';
+import { Header, NavLinkStyled } from './AppBar.styled';
 
 const navItems = [
   { href: '/', text: 'Home' },
   { href: '/movies', text: 'Movies' },
 ];
 
-const Bar = () => {
+const AppBar = () => {
   return (
     <Header>
       <nav>
@@ -16,4 +16,4 @@ const Bar = () => {
   );
 };
 
-export default Bar;
+export default AppBar;
