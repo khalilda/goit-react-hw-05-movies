@@ -4,7 +4,7 @@ import { useLocation, Outlet } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { getMoviesByName } from 'services/movies-api';
 import { MainStyels } from './Movies.styled';
-import MoviesList from 'components/MovieList/MovieList';
+import MoviesList from './MoviesList';
 
 const Movies = () => {
   const [query, setQuery] = useState('');

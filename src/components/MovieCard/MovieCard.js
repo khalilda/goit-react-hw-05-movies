@@ -10,7 +10,7 @@ import {
   Title,
 } from './MovieCard.styled';
 
-const MovieC = ({ movie }) => {
+const MovieCard = ({ movie }) => {
   const location = useLocation();
   const { id, title, vote_average, poster_path, release_date } = movie;
   return (
@@ -45,7 +45,7 @@ const MovieC = ({ movie }) => {
   );
 };
 
-MovieC.propTypes = {
+MovieCard.propTypes = {
   movie: PT.object.isRequired,
 };
 
