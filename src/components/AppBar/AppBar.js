@@ -9,8 +9,11 @@ const AppBar = () => {
   return (
     <Header>
       <nav>
-        <NavLinkStyled to="/">Home</NavLinkStyled>
-        <NavLinkStyled to="/movies">Movies</NavLinkStyled>
+        {navItems.map(({ item, index }) => (
+          <NavLinkStyled key={index} to={item.href}>
+            {item.text}
+          </NavLinkStyled>
+        ))}
       </nav>
     </Header>
   );
@@ -18,7 +21,5 @@ const AppBar = () => {
 
 export default AppBar;
 
-
-//q: how to fix the code?
-//q: what is the problem?
-//q: what is the solution?
+// <NavLinkStyled to="/">Home</NavLinkStyled>
+//         <NavLinkStyled to="/movies">Movies</NavLinkStyled>
