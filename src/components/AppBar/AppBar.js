@@ -17,3 +17,8 @@ const AppBar = () => {
 };
 
 export default AppBar;
+
+
+//q: how to fix the code?
+//q: what is the problem?
+//q: what is the solution?
