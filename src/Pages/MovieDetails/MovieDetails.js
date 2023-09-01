@@ -1,4 +1,4 @@
-import { Loader } from 'components';
+import { Loader } from './components/Loader/Loader';
 import { Suspense, useEffect, useState } from 'react';
 import { BsArrowLeft } from 'react-icons/bs';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';

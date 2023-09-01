@@ -1,6 +1,6 @@
 import PT from 'prop-types';
 import { useState } from 'react';
-import { ReadorHide, Text } from './ReadMore.styled';
+import { ReadorHide, Text } from '../ReadMore/ReadMore.styled';
 
 const ReadMore = ({ children }) => {
   const text = children;

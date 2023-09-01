@@ -1,14 +1,14 @@
 import PT from 'prop-types';
 import { AiOutlineLike } from 'react-icons/ai';
 import { NavLink, useLocation } from 'react-router-dom';
-import noPhoto from 'images/noPhoto.jpg';
+import noPhoto from '../../img/noImage.png';
 import {
   Img,
   InfoWrapp,
   MovieItems,
   RatingWrapp,
   Title,
-} from './MovieCard.styled';
+} from '../MovieList/MovieList.styled';
 
 const MovieCard = ({ movie }) => {
   const location = useLocation();

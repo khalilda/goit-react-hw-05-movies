@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Layout from '../components/Layout/Layout';
-import Footer from '../components/Footer/Footer';
+import Layout from './Layout/Layout';
+import Footer from './components/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
 
 const Home = lazy(() => import('../Pages/Home/Home'));

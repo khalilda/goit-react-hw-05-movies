@@ -2,7 +2,7 @@ import PT from 'prop-types';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { BiSearchAlt2 } from 'react-icons/bi';
-import { Form, Input, SearchhBtn } from './SearchMovies.styled';
+import { Form, Input, SearchhBtn } from '../SearchMovies/SearchMovies.styled';
 
 const SearchMovies = ({ onSubmit }) => {
   const [inputValue, setInputValue] = useState('');

@@ -1,4 +1,4 @@
-import { TrendMoviesList } from 'Components';
+import { TrendMoviesList } from '../../components/TrendMoviesList/TrendMoviesList';
 
 import { MainStyles } from '../Home/Home.styled';
 

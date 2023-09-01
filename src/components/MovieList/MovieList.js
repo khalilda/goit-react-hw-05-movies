@@ -1,6 +1,6 @@
 import { MovieCard } from 'components';
 import PT from 'prop-types';
-import { MoviesListStyles } from './MovieList.styled';
+import { MoviesListStyles } from '../MovieList/MovieList.styled';
 const MoviesList = ({ moviesData }) => {
   return (
     <MoviesListStyles>
