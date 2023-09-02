@@ -29,7 +29,7 @@ const Movies = () => {
     }
     async function fetchData() {
       try {
-        const response = await getMoviesByName(query, fromQueryString);
+        const response = await getMoviesByName(fromQueryString);
         const data = response.data.results;
 
         data.length === 0
