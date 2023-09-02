@@ -1,13 +1,14 @@
 import PT from 'prop-types';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+
 import { BiSearchAlt2 } from 'react-icons/bi';
 import { Form, Input } from '../SearchMovies/SearchMovies.styled';
 import { SearchBtn } from '../SearchMovies/SearchMovies.styled';
+import { unstable_HistoryRouter } from 'react-router-dom';
 
 const SearchMovies = ({ onSubmit }) => {
   const [inputValue, setInputValue] = useState('');
-  const history = useHistory();
+  const history = unstable_HistoryRouter();
 
   const onInputChange = e => {
     const name = e.target.value;
