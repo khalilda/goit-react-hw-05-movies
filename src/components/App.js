@@ -30,8 +30,3 @@ export const App = () => {
     </>
   );
 };
-
-
-//q: is my code working good or no and if not how to fix it?
-//q: how to fix my code?
-//q: how to fix my code?
