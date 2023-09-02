@@ -1,12 +1,13 @@
 import PT from 'prop-types';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { unstable_HistoryRouter, useHistory } from 'react-router-dom';
 import { BiSearchAlt2 } from 'react-icons/bi';
-import { Form, Input, SearchhBtn } from '../SearchMovies/SearchMovies.styled';
+import { Form, Input } from '../SearchMovies/SearchMovies.styled';
+import { SearchBtn } from '../SearchMovies/SearchMovies.styled';
 
 const SearchMovies = ({ onSubmit }) => {
   const [inputValue, setInputValue] = useState('');
-  const history = useHistory();
+  const history = unstable_HistoryRouter();
 
   const onInputChange = e => {
     const name = e.target.value;
@@ -30,9 +31,9 @@ const SearchMovies = ({ onSubmit }) => {
         onChange={onInputChange}
         required
       />
-      <SearchhBtn type="submit" aria-label="Search">
+      <SearchBtn type="submit" aria-label="Search">
         <BiSearchAlt2 style={{ fill: '#fff', width: '20px', height: '20px' }} />
-      </SearchhBtn>
+      </SearchBtn>
     </Form>
   );
 };

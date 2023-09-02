@@ -1,14 +1,15 @@
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
-import Footer from './components/Footer/Footer';
+
 import { ToastContainer } from 'react-toastify';
+import Footer from './Footer/Footer';
+import Reviews from './Reviews/Reviews';
 
 const Home = lazy(() => import('../Pages/Home/Home'));
 const Movies = lazy(() => import('../Pages/Movies/Movies'));
 const MovieDetails = lazy(() => import('../Pages/MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('../Pages/Cast/Cast'));
-const Reviews = lazy(() => import('../Pages/Reviews/Reviews'));
 
 export const App = () => {
   return (

@@ -1,5 +1,4 @@
-import { TrendMoviesList } from '../../components/TrendMoviesList/TrendMoviesList';
-
+import TrendMoviesList from 'components/TrendMoviesList/TrendMoviesList';
 import { MainStyles } from '../Home/Home.styled';
 
 const Home = () => {

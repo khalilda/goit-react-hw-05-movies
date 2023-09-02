@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const MainSlyels = styled.main`
+export const MainStyles = styled.main`
   min-height: calc(100vh - 64px);
   padding: 20px;
 `;
@@ -64,7 +64,7 @@ export const Text = styled.p`
   margin-bottom: 20px;
 `;
 
-export const Wrappr = styled.div`
+export const Wrapp = styled.div`
   @media screen and (min-width: 770px) {
     margin-left: auto;
     margin-right: auto;

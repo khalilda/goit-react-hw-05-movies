@@ -1,10 +1,12 @@
-import { Loader, MoviesList, SearchMovies } from 'components';
+// import { Loader, MoviesList, SearchMovies } from 'components';
 import { useEffect, useState, Suspense } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { getMoviesByName } from '../../Services/Api';
-import { MainStyels } from '../Movies/Movies.styled';
-// import MoviesList from './MoviesList';
+import { MainStyles } from '../Movies/Movies.styled';
+import SearchMovies from 'components/SearchMovies/SearchMovies';
+import MoviesList from 'components/MovieList/MovieList';
+import Loader from 'components/Loader/Loader';
 
 const Movies = () => {
   const [query, setQuery] = useState('');
@@ -51,13 +53,13 @@ const Movies = () => {
   }, [fromQueryString]);
 
   return (
-    <MainStyels>
+    <MainStyles>
       <SearchMovies onSubmit={getQuery} />
       {moviesData && <MoviesList moviesData={moviesData} />}
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
-    </MainStyels>
+    </MainStyles>
   );
 };
 

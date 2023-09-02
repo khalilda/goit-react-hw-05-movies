@@ -16,7 +16,7 @@ scale 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 `;
 
-export const RatingWrappr = styled.div`
+export const RatingWrapp = styled.div`
   position: absolute;
   top: 0;
   right: 0;

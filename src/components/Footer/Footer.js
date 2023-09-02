@@ -1,4 +1,4 @@
-import { FooterStyles, Icon } from './components/Footer/Footer.styled';
+import { FooterStyles, Icon } from './Footer.styled';
 
 const Footer = () => {
   return (

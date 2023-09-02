@@ -1,20 +1,15 @@
 import PT from 'prop-types';
 import { AiOutlineLike } from 'react-icons/ai';
 import { NavLink, useLocation } from 'react-router-dom';
+import { MoviesListStyles } from 'components/MovieList/MovieList.styled';
 import noPhoto from '../../img/noImage.png';
-import {
-  Img,
-  InfoWrapp,
-  MovieItems,
-  RatingWrapp,
-  Title,
-} from './MovieCard.styled';
+import { Img, InfoWrapp, RatingWrapp, Title } from './MovieCard.styled';
 
 const MovieCard = ({ movie }) => {
   const location = useLocation();
   const { id, title, vote_average, poster_path, release_date } = movie;
   return (
-    <MovieItems key={id}>
+    <MoviesListStyles key={id}>
       <NavLink
         to={{
           pathname: location.pathname === `/movies/${id}`,
@@ -41,7 +36,7 @@ const MovieCard = ({ movie }) => {
           </p>
         </InfoWrapp>
       </NavLink>
-    </MovieItems>
+    </MoviesListStyles>
   );
 };
 

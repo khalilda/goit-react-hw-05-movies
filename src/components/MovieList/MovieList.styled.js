@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MoviesListStales = styled.ul`
+export const MoviesListStyles = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

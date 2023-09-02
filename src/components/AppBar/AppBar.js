@@ -1,4 +1,4 @@
-import { Header, NavLinkStyled } from './components/AppBar/AppBar.styled';
+import { Header, NavLinkStyled } from './AppBar.styled';
 
 const navItems = [
   { href: '/', text: 'Home' },
