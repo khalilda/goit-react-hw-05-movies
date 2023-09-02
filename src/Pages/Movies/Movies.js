@@ -7,7 +7,6 @@ import { MainStyles } from '../Movies/Movies.styled';
 import SearchMovies from 'components/SearchMovies/SearchMovies';
 import MoviesList from 'components/MovieList/MovieList';
 import Loader from 'components/Loader/Loader';
-import { useSearchParams } from 'react-router-dom';
 
 const Movies = () => {
   const [query, setQuery] = useState('');
