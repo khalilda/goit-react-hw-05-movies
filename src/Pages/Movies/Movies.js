@@ -39,18 +39,18 @@ const Movies = () => {
     fetchData();
   }, [query]);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await getMoviesByName(fromQueryString);
-        const data = response.data.results;
-        setMoviesData(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchData();
-  }, [fromQueryString]);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const response = await getMoviesByName(fromQueryString);
+  //       const data = response.data.results;
+  //       setMoviesData(data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   fetchData();
+  // }, [fromQueryString]);
 
   return (
     <MainStyles>

@@ -4,11 +4,9 @@ import { useState } from 'react';
 import { BiSearchAlt2 } from 'react-icons/bi';
 import { Form, Input } from '../SearchMovies/SearchMovies.styled';
 import { SearchBtn } from '../SearchMovies/SearchMovies.styled';
-import { unstable_HistoryRouter } from 'react-router-dom';
 
 const SearchMovies = ({ onSubmit }) => {
   const [inputValue, setInputValue] = useState('');
-  const history = unstable_HistoryRouter();
 
   const onInputChange = e => {
     const name = e.target.value;
@@ -20,7 +18,6 @@ const SearchMovies = ({ onSubmit }) => {
     const searchName = inputValue.trim();
     setInputValue('');
     onSubmit(searchName);
-    history.push(`?query=${searchName}`);
   };
 
   return (
