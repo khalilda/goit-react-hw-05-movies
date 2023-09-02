@@ -8,7 +8,7 @@ import {
   MovieItems,
   RatingWrapp,
   Title,
-} from '../MovieList/MovieList.styled';
+} from './MovieCard.styled';
 
 const MovieCard = ({ movie }) => {
   const location = useLocation();
