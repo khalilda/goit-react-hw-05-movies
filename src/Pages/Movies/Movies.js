@@ -1,23 +1,27 @@
 // import { Loader, MoviesList, SearchMovies } from 'components';
 import { useEffect, useState, Suspense } from 'react';
-import { useLocation, Outlet } from 'react-router-dom';
+import { Outlet, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { getMoviesByName } from '../../Services/Api';
 import { MainStyles } from '../Movies/Movies.styled';
 import SearchMovies from 'components/SearchMovies/SearchMovies';
 import MoviesList from 'components/MovieList/MovieList';
 import Loader from 'components/Loader/Loader';
+import { useSearchParams } from 'react-router-dom';
 
 const Movies = () => {
   const [query, setQuery] = useState('');
   const [moviesData, setMoviesData] = useState([]);
-  const location = useLocation();
-  const fromQueryString = location.search.replace(/\?query=/, '');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const fromQueryString = searchParams.get('query') || '';
 
   const getQuery = searchName => {
-    searchName === ''
-      ? toast.error('Please enter the name of the movie')
-      : setQuery(searchName);
+    if (searchName === '') {
+      toast.error('Please enter the name of the movie');
+    } else {
+      setSearchParams({ query: searchName });
+      setQuery(searchName);
+    }
   };
 
   useEffect(() => {
@@ -26,7 +30,7 @@ const Movies = () => {
     }
     async function fetchData() {
       try {
-        const response = await getMoviesByName(query);
+        const response = await getMoviesByName(query, fromQueryString);
         const data = response.data.results;
 
         data.length === 0
