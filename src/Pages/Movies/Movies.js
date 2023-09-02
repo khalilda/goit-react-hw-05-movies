@@ -1,4 +1,3 @@
-// import { Loader, MoviesList, SearchMovies } from 'components';
 import { useEffect, useState, Suspense } from 'react';
 import { Outlet, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -29,7 +28,7 @@ const Movies = () => {
     }
     async function fetchData() {
       try {
-        const response = await getMoviesByName(fromQueryString);
+        const response = await getMoviesByName(query, fromQueryString);
         const data = response.data.results;
 
         data.length === 0
@@ -40,20 +39,7 @@ const Movies = () => {
       }
     }
     fetchData();
-  }, [query]);
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const response = await getMoviesByName(fromQueryString);
-  //       const data = response.data.results;
-  //       setMoviesData(data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   fetchData();
-  // }, [fromQueryString]);
+  }, [query, fromQueryString]);
 
   return (
     <MainStyles>
