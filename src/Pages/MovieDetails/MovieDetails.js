@@ -20,7 +20,7 @@ import Loader from 'components/Loader/Loader';
 
 const MoviesDetails = () => {
   const { movieId } = useParams();
-  const [movieInfo, setMovieInfo] = useState({});
+  const [movieInfo, setMovieInfo] = useState(null);
   const location = useLocation();
   const [genres, setGenres] = useState([]);
   const [oldPath, setOldPath] = useState('');
@@ -48,6 +48,10 @@ const MoviesDetails = () => {
   const goBack = () => {
     navigate(oldPath);
   };
+
+  if (!movieInfo) {
+    return <Loader />;
+  }
 
   const { original_title, release_date, vote_average, poster_path, overview } =
     movieInfo;

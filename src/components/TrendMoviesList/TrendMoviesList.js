@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getTrendMovies } from '../../Services/Api';
-import { MoviesListStyles } from 'components/MovieList/MovieList.styled';
+import MoviesList from 'components/MovieList/MovieList';
 
 const TrendMoviesList = () => {
   const [moviesData, setmoviesData] = useState([]);
@@ -17,7 +17,7 @@ const TrendMoviesList = () => {
     fetchData();
   }, []);
 
-  return <MoviesListStyles moviesData={moviesData} />;
+  return <MoviesList moviesData={moviesData} />;
 };
 
 export default TrendMoviesList;
