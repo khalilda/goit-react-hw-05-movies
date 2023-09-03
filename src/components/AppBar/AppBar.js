@@ -9,7 +9,7 @@ const AppBar = () => {
   return (
     <Header>
       <nav>
-        {navItems.map(({ item, index }) => (
+        {navItems.map((item, index) => (
           <NavLinkStyled key={index} to={item.href}>
             {item.text}
           </NavLinkStyled>
@@ -20,6 +20,3 @@ const AppBar = () => {
 };
 
 export default AppBar;
-
-// <NavLinkStyled to="/">Home</NavLinkStyled>
-//         <NavLinkStyled to="/movies">Movies</NavLinkStyled>

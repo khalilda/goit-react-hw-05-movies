@@ -11,11 +11,11 @@ const MovieCard = ({ movie }) => {
   return (
     <MoviesListStyles key={id}>
       <NavLink
-        to={{
-          pathname: location.pathname === `/movies/${id}`,
-          // ? `/movies/${id}`
-          // : `movies/${id}`,
-        }}
+        to={
+          location.pathname === `/movies/${id}`
+            ? `/movies/${id}`
+            : `/movies/${id}/cast`
+        }
         state={{ from: location }}
       >
         <RatingWrapp>
