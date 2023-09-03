@@ -10,24 +10,24 @@ export const BtnGoBack = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  padding: 8px 5px;
   margin-bottom: 20px;
-  border-radius: 5px;
-  border: 1px solid #e50914;
+  border: solid 1px darkblue;
+  border-radius: 4px;
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: inherit;
   color: inherit;
+  width: 100px;
+  padding: 8px 5px;
 
   &:hover,
   &:focus {
-    box-shadow: 0px 0px 10px 1px #e50914;
+    box-shadow: 0 0 13px 3px darkblue;
   }
 `;
 
 export const InfoWrapp = styled.div`
-  margin-bottom: 20px;
-  @media screen and (min-width: 80px) {
+  margin-bottom: 30px;
+  @media screen and (min-width: 780px) {
     display: flex;
     padding: 20px;
   }
@@ -36,7 +36,7 @@ export const InfoWrapp = styled.div`
 export const Img = styled.img`
   max-width: 300px;
   width: 100%;
-  border: 1px solid #e50914;
+  border: 1px solid darkblue;
   @media screen and (min-width: 780px) {
     margin-right: 20px;
   }
@@ -83,12 +83,12 @@ margin-bottom: 30px;
 export const InfoLink = styled(Link)`
   padding: 8px 5px;
   text-align: center;
-  border: 1px solid #e50914;
+  border: 1px solid darkblue;
   width: 100px;
   display: block;
 
   &:hover,
   &:focus {
-    box-shadow: 0px 0px 13px 1px #e50914;
+    box-shadow: 0px 0px 13px 1px darkblue;
   }
 `;
