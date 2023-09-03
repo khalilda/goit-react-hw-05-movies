@@ -6,6 +6,6 @@ export const Text = styled.p`
 `;
 
 export const ReadorHide = styled.span`
-  color: darkblue;
+  color: darkgray;
   cursor: pointer;
 `;

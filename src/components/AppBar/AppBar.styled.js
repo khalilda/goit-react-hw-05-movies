@@ -7,8 +7,8 @@ export const Header = styled.header`
   justify-content: space-between;
   gap: 15px;
   padding: 15px;
-  border-bottom: solid 1px darkblue;
-  box-shadow: 0 0 13px 3px darkblue;
+  border-bottom: solid 1px darkgray;
+  box-shadow: 0 0 13px 3px darkgray;
 
   > nav {
     display: flex;
@@ -24,6 +24,6 @@ export const NavLinkStyled = styled(NavLink)`
 
   &.active {
     color: white;
-    background-color: darkblue;
+    background-color: darkgray;
   }
 `;

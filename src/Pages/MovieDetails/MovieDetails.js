@@ -1,13 +1,18 @@
 import { Suspense, useEffect, useState } from 'react';
 import { BsArrowLeft } from 'react-icons/bs';
-import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from 'react-router-dom';
 import noPhoto from 'img/noImage.png';
 import { getMovieById } from '../../Services/Api';
 import {
   BtnGoBack,
   Img,
   InfoWrapp,
-  InfoLink,
   InfoTitle,
   MainStyles,
   MoreInfoList,
@@ -91,14 +96,14 @@ const MoviesDetails = () => {
       )}
       <MoreInfoList>
         <li>
-          <InfoLink to={'cast'} state={location.state} id={movieId}>
+          <Link to={`/movies/${movieId}/cast`} state={location.state}>
             Cast
-          </InfoLink>
+          </Link>
         </li>
         <li>
-          <InfoLink to={'reviews'} state={location.state} id={movieId}>
+          <Link to={`/movies/${movieId}/reviews`} state={location.state}>
             Reviews
-          </InfoLink>
+          </Link>
         </li>
       </MoreInfoList>
       <Suspense fallback={<Loader />}>

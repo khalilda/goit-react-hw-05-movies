@@ -7,21 +7,21 @@ export const MainStyles = styled.main`
 `;
 
 export const BtnGoBack = styled.button`
+  width: 100px;
+  padding: 8px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  border: solid 1px darkblue;
+  border: solid 1px darkgray;
   border-radius: 4px;
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: inherit;
   color: inherit;
-  width: 100px;
-  padding: 8px 5px;
 
   &:hover,
   &:focus {
-    box-shadow: 0 0 13px 3px darkblue;
+    box-shadow: 0 0 13px 3px darkgray;
   }
 `;
 
@@ -36,11 +36,13 @@ export const InfoWrapp = styled.div`
 export const Img = styled.img`
   max-width: 300px;
   width: 100%;
-  border: 1px solid darkblue;
+  border: solid 1px darkgray;
+
   @media screen and (min-width: 780px) {
     margin-right: 20px;
   }
-  @media screen and (min-width: 770px) {
+
+  @media screen and (max-width: 779px) {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -65,7 +67,7 @@ export const Text = styled.p`
 `;
 
 export const Wrapp = styled.div`
-  @media screen and (min-width: 770px) {
+  @media screen and (max-width: 779px) {
     margin-left: auto;
     margin-right: auto;
     max-width: 400px;
@@ -74,21 +76,21 @@ export const Wrapp = styled.div`
 `;
 
 export const MoreInfoList = styled.ul`
-display: flex;
-gap: 15px
-justify-content: center;
-margin-bottom: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
 `;
 
 export const InfoLink = styled(Link)`
   padding: 8px 5px;
   text-align: center;
-  border: 1px solid darkblue;
+  border: solid 1px darkgray;
   width: 100px;
   display: block;
 
   &:hover,
   &:focus {
-    box-shadow: 0px 0px 13px 1px darkblue;
+    box-shadow: 0 0 13px 3px darkgray;
   }
 `;

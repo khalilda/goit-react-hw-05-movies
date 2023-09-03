@@ -8,8 +8,8 @@ export const FooterStyles = styled.footer`
   min-height: 64px;
   align-items: center;
   justify-content: center;
-  border-top: solid 1px darkblue;
-  box-shadow: 0 0 13px 3px darkblue;
+  border-top: solid 1px darkgray;
+  box-shadow: 0 0 13px 3px darkgray;
 
   > div {
     align-items: center;
@@ -19,7 +19,7 @@ export const FooterStyles = styled.footer`
 `;
 
 export const Icon = styled(BsGithub)`
- margin-left: 5px;
+  margin-left: 5px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -27,7 +27,6 @@ export const Icon = styled(BsGithub)`
 
   &:hover,
   &:focus {
-    fill: darkblue;
-  }
+    fill: darkgray;
   }
 `;

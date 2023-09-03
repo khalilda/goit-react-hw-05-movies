@@ -33,30 +33,31 @@ const Cast = () => {
     fetchData();
   }, [movieId]);
 
-  return cast === 0 || cast.length === 0 ? (
-    <ErrorText>
-      We dont have any information about casts for this movie
-    </ErrorText>
-  ) : (
-    <CastWrapp>
-      {cast.map(castMember => {
-        return (
-          <CastBox key={castMember.credit.id}>
-            <Photo
-              src={
-                castMember.profile_path
-                  ? `https://image.tmdb.org/t/p/w500${castMember.profile_path}`
-                  : noImage
-              }
-              alt={castMember.name}
-            />
-            <Name>{castMember.name}</Name>
-            <Character>Character: {castMember.character}</Character>
-          </CastBox>
-        );
-      })}
-    </CastWrapp>
-  );
+  if (cast === null || cast.length === 0) {
+    return (
+      <ErrorText>
+        We don't have any information about the cast for this movie
+      </ErrorText>
+    );
+  }
+  <CastWrapp>
+    {cast.map(castMember => {
+      return (
+        <CastBox key={castMember.credit.id}>
+          <Photo
+            src={
+              castMember.profile_path
+                ? `https://image.tmdb.org/t/p/w500${castMember.profile_path}`
+                : noImage
+            }
+            alt={castMember.name}
+          />
+          <Name>{castMember.name}</Name>
+          <Character>Character: {castMember.character}</Character>
+        </CastBox>
+      );
+    })}
+  </CastWrapp>;
 };
 
 export default Cast;

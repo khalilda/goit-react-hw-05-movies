@@ -6,7 +6,7 @@ export const CastWrapp = styled.ul`
   padding: 20px;
   justify-content: center;
   flex-wrap: wrap;
-  border-top: solid 1px darkblue;
+  border-top: solid 1px darkgray;
 `;
 
 export const CastBox = styled.li`
@@ -46,6 +46,6 @@ export const Character = styled.p`
 `;
 
 export const ErrorText = styled.p`
-  font-size: 20px;
   text-align: center;
+  font-size: 20px;
 `;
