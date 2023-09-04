@@ -13,7 +13,7 @@ import {
 
 const Cast = () => {
   const { movieId } = useParams();
-  const [cast, setCast] = useState(null);
+  const [cast, setCast] = useState([]);
 
   useEffect(() => {
     if (!movieId) {
@@ -33,28 +33,30 @@ const Cast = () => {
     fetchData();
   }, [movieId]);
 
-  return cast === 0 || cast.length === 0 ? (
-    <ErrorText>
-      We dont have any information about casts for this movie
-    </ErrorText>
-  ) : (
+  if (cast.length === 0) {
+    return (
+      <ErrorText>
+        We don't have any information about casts for this movie
+      </ErrorText>
+    );
+  }
+
+  return (
     <CastWrapp>
-      {cast.map(castMember => {
-        return (
-          <CastBox key={castMember.credit.id}>
-            <Photo
-              src={
-                castMember.profile_path
-                  ? `https://image.tmdb.org/t/p/w500${castMember.profile_path}`
-                  : noImage
-              }
-              alt={castMember.name}
-            />
-            <Name>{castMember.name}</Name>
-            <Character>Character: {castMember.character}</Character>
-          </CastBox>
-        );
-      })}
+      {cast.map(castMember => (
+        <CastBox key={castMember.credit.id}>
+          <Photo
+            src={
+              castMember.profile_path
+                ? `https://image.tmdb.org/t/p/w500${castMember.profile_path}`
+                : noImage
+            }
+            alt={castMember.name}
+          />
+          <Name>{castMember.name}</Name>
+          <Character>Character: {castMember.character}</Character>
+        </CastBox>
+      ))}
     </CastWrapp>
   );
 };

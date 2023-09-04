@@ -30,7 +30,7 @@ const Movies = () => {
         const response = await getMoviesByName(fromQueryString);
         const data = response.data.results;
 
-        data.length === 0
+        data.length === response.data.results
           ? toast.error(`Sorry, we can't find any ${fromQueryString}`)
           : setMoviesData(data);
       } catch (error) {
