@@ -27,17 +27,17 @@ export const getMovieDetails = movieId => {
 
 export const getMovieCard = movieId => {
   const respone = api.get(`/movie/${movieId}/credits`);
-  return respone;
+  return respone.data.credits;
 };
 
 export const getReviews = movieId => {
   const respone = api.get(`/movie/${movieId}/reviews`);
-  return respone;
+  return respone.data.reviews;
 };
 
 export const getCast = movieId => {
   const respone = api.get(`/movie/${movieId}/credits`);
-  return respone;
+  return respone.data.cast;
 };
 
 export const getMovieById = movieId => {
