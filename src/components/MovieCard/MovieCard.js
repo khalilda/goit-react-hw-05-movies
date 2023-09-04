@@ -10,14 +10,7 @@ const MovieCard = ({ movie }) => {
   const { id, title, vote_average, poster_path, release_date } = movie;
   return (
     <MoviesListStyles key={id}>
-      <NavLink
-        to={
-          location.pathname === `/movies/${id}`
-            ? `/movies/${id}/reviews`
-            : `/movies/${id}/cast`
-        }
-        state={{ from: location }}
-      >
+      <NavLink to={`/movies/${id}`} state={{ from: location }}>
         <RatingWrapp>
           <AiOutlineLike /> <span>{Math.round(vote_average) * 10}%</span>
         </RatingWrapp>
