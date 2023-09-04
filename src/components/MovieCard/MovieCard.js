@@ -13,7 +13,7 @@ const MovieCard = ({ movie }) => {
       <NavLink
         to={
           location.pathname === `/movies/${id}`
-            ? `/movies/${id}`
+            ? `/movies/${id}/reviews`
             : `/movies/${id}/cast`
         }
         state={{ from: location }}

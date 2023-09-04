@@ -1,12 +1,6 @@
 import { Suspense, useEffect, useState } from 'react';
 import { BsArrowLeft } from 'react-icons/bs';
-import {
-  Link,
-  Outlet,
-  useLocation,
-  useNavigate,
-  useParams,
-} from 'react-router-dom';
+import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import noPhoto from 'img/noImage.png';
 import { getMovieById } from '../../Services/Api';
 import {
@@ -20,6 +14,7 @@ import {
   Text,
   Title,
   Wrapp,
+  InfoLink,
 } from './MovieDetails.styled';
 import Loader from 'components/Loader/Loader';
 
@@ -96,14 +91,14 @@ const MoviesDetails = () => {
       )}
       <MoreInfoList>
         <li>
-          <Link to={`/movies/${movieId}/cast`} state={location.state}>
+          <InfoLink to={'cast'} state={location.state} id={movieId}>
             Cast
-          </Link>
+          </InfoLink>
         </li>
         <li>
-          <Link to={`/movies/${movieId}/reviews`} state={location.state}>
+          <InfoLink to={'reviews'} state={location.state} id={movieId}>
             Reviews
-          </Link>
+          </InfoLink>
         </li>
       </MoreInfoList>
       <Suspense fallback={<Loader />}>
