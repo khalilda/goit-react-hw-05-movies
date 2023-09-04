@@ -91,12 +91,12 @@ const MoviesDetails = () => {
       )}
       <MoreInfoList>
         <li>
-          <InfoLink to={'cast'} state={location.state} id={movieId}>
+          <InfoLink to={`/movies/${movieId}/cast`} state={location.state}>
             Cast
           </InfoLink>
         </li>
         <li>
-          <InfoLink to={'reviews'} state={location.state} id={movieId}>
+          <InfoLink to={`/movies/${movieId}/reviews`} state={location.state}>
             Reviews
           </InfoLink>
         </li>
