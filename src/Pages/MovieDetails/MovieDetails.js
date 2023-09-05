@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { BsArrowLeft } from 'react-icons/bs';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import noPhoto from 'img/noImage.png';
@@ -23,7 +23,7 @@ const MoviesDetails = () => {
   const location = useLocation();
   const [genres, setGenres] = useState([]);
 
-  const oldPath = useRef(location.state?.from || '/');
+  // const oldPath = useRef(location.state?.from || '/');
 
   useEffect(() => {
     if (!movieId) {
@@ -51,7 +51,7 @@ const MoviesDetails = () => {
 
   return (
     <MainStyles>
-      <Link to={oldPath.current}>
+      <Link to={location.state?.from || '/'}>
         <BsArrowLeft style={{ marginRight: '10px' }} />
         Go back
       </Link>
