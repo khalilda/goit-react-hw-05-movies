@@ -35,8 +35,8 @@ export const getReviews = movieId => {
   return respone.reviews;
 };
 
-export const getCast = movieId => {
-  const respone = api.get(`/movie/${movieId}/credits`);
+export const getCast = async movieId => {
+  const respone = await api.get(`/movie/${movieId}/credits`);
   console.log(respone);
   return respone.cast;
 };
