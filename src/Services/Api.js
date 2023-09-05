@@ -37,7 +37,7 @@ export const getReviews = async movieId => {
 
 export const getCast = async movieId => {
   const { data } = await api.get(`/movie/${movieId}/credits`);
-  return data.results;
+  return data.cast;
 };
 
 export const getMovieById = movieId => {

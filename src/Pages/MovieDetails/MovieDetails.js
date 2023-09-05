@@ -22,6 +22,7 @@ const MoviesDetails = () => {
   const [movieInfo, setMovieInfo] = useState(null);
   const location = useLocation();
   const [genres, setGenres] = useState([]);
+
   const oldPath = useRef(location.state?.from || '/');
 
   useEffect(() => {
