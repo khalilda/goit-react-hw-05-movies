@@ -1,10 +1,9 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { BsArrowLeft } from 'react-icons/bs';
-import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import noPhoto from 'img/noImage.png';
 import { getMovieById } from '../../Services/Api';
 import {
-  BtnGoBack,
   Img,
   InfoWrapp,
   InfoTitle,
@@ -23,9 +22,7 @@ const MoviesDetails = () => {
   const [movieInfo, setMovieInfo] = useState(null);
   const location = useLocation();
   const [genres, setGenres] = useState([]);
-  const [oldPath, setOldPath] = useState('');
-
-  let navigate = useNavigate();
+  const oldPath = useRef(location.state?.from || '/');
 
   useEffect(() => {
     if (!movieId) {
@@ -37,17 +34,12 @@ const MoviesDetails = () => {
         const movieInfo = response.data;
         setMovieInfo(movieInfo);
         setGenres(movieInfo.genres);
-        setOldPath(location.state.from);
       } catch (error) {
         console.error(error);
       }
     }
     fetchData();
-  }, [movieId, location.state.from]);
-
-  const goBack = () => {
-    navigate(oldPath);
-  };
+  }, [movieId]);
 
   if (!movieInfo) {
     return <Loader />;
@@ -58,10 +50,10 @@ const MoviesDetails = () => {
 
   return (
     <MainStyles>
-      <BtnGoBack type="button" onClick={goBack}>
+      <Link to={oldPath.current}>
         <BsArrowLeft style={{ marginRight: '10px' }} />
         Go back
-      </BtnGoBack>
+      </Link>
       {movieInfo && (
         <InfoWrapp>
           <Img
@@ -91,14 +83,10 @@ const MoviesDetails = () => {
       )}
       <MoreInfoList>
         <li>
-          <InfoLink to={`/movies/${movieId}/cast`} state={location.state}>
-            Cast
-          </InfoLink>
+          <InfoLink to={`cast`}>Cast</InfoLink>
         </li>
         <li>
-          <InfoLink to={`/movies/${movieId}/reviews`} state={location.state}>
-            Reviews
-          </InfoLink>
+          <InfoLink to={`reviews`}>Reviews</InfoLink>
         </li>
       </MoreInfoList>
       <Suspense fallback={<Loader />}>

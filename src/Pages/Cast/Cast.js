@@ -44,7 +44,7 @@ const Cast = () => {
   return (
     <CastWrapp>
       {cast.map(castMember => (
-        <CastBox key={castMember.credit.id}>
+        <CastBox key={castMember.id}>
           <Photo
             src={
               castMember.profile_path
