@@ -37,6 +37,7 @@ export const getReviews = movieId => {
 
 export const getCast = movieId => {
   const respone = api.get(`/movie/${movieId}/credits`);
+  console.log(respone);
   return respone.cast;
 };
 
