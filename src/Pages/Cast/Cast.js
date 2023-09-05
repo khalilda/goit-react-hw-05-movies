@@ -24,6 +24,7 @@ const Cast = () => {
     async function fetchData() {
       try {
         const response = await getCast(movieId);
+        console.log(response);
         setCast(response);
       } catch (error) {
         console.error(error);
@@ -62,5 +63,3 @@ const Cast = () => {
 };
 
 export default Cast;
-
-//q. is this code correct?

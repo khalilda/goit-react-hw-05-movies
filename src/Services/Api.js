@@ -32,12 +32,12 @@ export const getMovieCard = movieId => {
 
 export const getReviews = movieId => {
   const respone = api.get(`/movie/${movieId}/reviews`);
-  return respone.data.reviews;
+  return respone.reviews;
 };
 
 export const getCast = movieId => {
   const respone = api.get(`/movie/${movieId}/credits`);
-  return respone.data.cast;
+  return respone.cast;
 };
 
 export const getMovieById = movieId => {
