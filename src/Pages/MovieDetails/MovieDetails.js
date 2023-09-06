@@ -98,3 +98,6 @@ const MoviesDetails = () => {
 };
 
 export default MoviesDetails;
+
+//q. why the rating is not at the right place?
+

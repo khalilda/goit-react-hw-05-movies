@@ -18,11 +18,9 @@ export const MovieItems = styled.li`
 `;
 
 export const RatingWrapp = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: inherit;
+
   text-align: center;
-  background-color: darkgray;
   width: 40px;
   height: 40px;
 `;
